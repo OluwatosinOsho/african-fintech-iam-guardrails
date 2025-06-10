@@ -1,0 +1,8 @@
+# AWS
+.aws/
+*.pem
+*.cer
+.env
+.terraform/
+.vscode/
+*.log
