@@ -41,6 +41,4 @@ Both roles are built with least privilege as the foundation. Instead of assignin
 
 ---
 
-## 🔍 SEO Tags (For Repo Metadata)
 
-`aws iam roles`, `rbac in aws`, `cloud security fintech`, `least privilege aws`, `iam policy examples`, `fintech devops`, `aws audit role`, `secure cloud infrastructure`, `iam best practices`
