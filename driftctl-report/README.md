@@ -2,7 +2,7 @@
 
 # Automated Drift Detection with AWS Config
 
-This directory documents how we implemented **automated configuration drift detection** for IAM security using AWS Config, an essential part of maintaining cloud security standards in fintech environments. Drift happens when your current AWS resource states deviate from security baselines or policy intent, leading to blind spots, weak compliance, and elevated risk.
+This directory documents how I implemented **automated configuration drift detection** for IAM security using AWS Config, an essential part of maintaining cloud security standards in fintech environments. Drift happens when your current AWS resource states deviate from security baselines or policy intent, leading to blind spots, weak compliance, and elevated risk.
 
 ---
 

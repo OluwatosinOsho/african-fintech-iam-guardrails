@@ -1,4 +1,4 @@
-# AWS Config Rule: IAM Root Access Key Check
+# AWS Config Rule: IAM Root Access Key Check 
 
 This document outlines the implementation and findings of an **AWS Config managed rule** used to enforce IAM security best practices within the **"African Fintech IAM Guardrails"** project.
 
@@ -38,7 +38,7 @@ Enforcing continuous compliance in cloud environments is essential, especially i
 
 - **Reduces Critical Risk Surface:** Because root access keys offer unrestricted access, they are a prime target for attackers. Removing them helps contain potential damage and strengthens your overall security posture.
 - **Enables Automated Governance:** Ensures root level IAM risks are continuously monitored without manual checks.
-- **Supports Audit & Compliance:** Demonstrates security maturity to auditors, investors, and compliance teams, this is vital in regulated fintech environments.
+- **Supports Audit & Compliance:** Demonstrates security maturity to auditors, investors, and compliance teams, vital in regulated fintech environments.
 
 ---
 
@@ -52,4 +52,4 @@ Visual proof of compliance is included here:
 
 ## 🧠 Summary
 
-This AWS Config rule acts as an automated guardrail, helping enforce zero tolerance for root level credential misuse. It's part of a larger strategy to build a secure, compliant, and investor ready fintech infrastructure in the cloud.
+This AWS Config rule acts as an automated guardrail, helping enforce zero tolerance for root level credential misuse. It's part of a larger strategy to build a secure, compliant, and investor-ready fintech infrastructure in the cloud.
