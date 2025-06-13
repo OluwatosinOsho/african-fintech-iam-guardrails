@@ -8,9 +8,9 @@ This document showcases the application of **Generative AI (Google Gemini)** in 
 
 FinTech applications frequently handle highly sensitive customer and transaction data. Ingesting this data into Amazon S3 must follow strict controls, including:
 
-- **Data Encryption at Rest** (e.g., SSE-KMS)
-- **Secure Data Transport** (enforced HTTPS)
-- **Granular Access Control** (IAM role-based and IP-restricted)
+- **Data Encryption at Rest** (e.g., SSE-KMS)  
+- **Secure Data Transport** (enforced HTTPS)  
+- **Granular Access Control** (IAM role-based and IP-restricted)  
 
 Manually crafting such policies is tedious, time consuming, and prone to human error, especially under tight compliance constraints.
 
@@ -22,13 +22,13 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
 
 > As an AWS IAM policy expert for a FinTech startup, draft an AWS S3 **bucket policy** (not an IAM user/role policy) that meets the following requirements:
 >
-> - **Actions Allowed**: Only `s3:PutObject` and `s3:DeleteObject`
-> - **Target Bucket**: `fintech-secure-data-ingestion-2025` and its objects
-> - **Principal**: IAM Role `arn:aws:iam::535537926792:role/FintechDataIngestionRole`
-> - **Encryption**: PUT operations must use **SSE-KMS** with key ID `arn:aws:kms:us-east-1:535537926792:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` and include the header `x-amz-server-side-encryption-aws-kms-key-id`
-> - **Transport**: HTTPS-only (`aws:SecureTransport`)
-> - **IP Restriction**: Only allow access from:
->   - `192.168.1.0/24`
+> - **Actions Allowed**: Only `s3:PutObject` and `s3:DeleteObject`  
+> - **Target Bucket**: `fintech-secure-data-ingestion-2025` and its objects  
+> - **Principal**: IAM Role `arn:aws:iam::535537926792:role/FintechDataIngestionRole`  
+> - **Encryption**: PUT operations must use **SSE-KMS** with key ID `arn:aws:kms:us-east-1:535537926792:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` and include the header `x-amz-server-side-encryption-aws-kms-key-id`  
+> - **Transport**: HTTPS-only (`aws:SecureTransport`)  
+> - **IP Restriction**: Only allow access from:  
+>   - `192.168.1.0/24`  
 >   - `10.0.0.10/32`
 
 ---
@@ -37,67 +37,68 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowPutWithKmsAndIpAndTlsRestrictions",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
-            },
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
-            "Condition": {
-                "StringEquals": {
-                    "s3:x-amz-server-side-encryption": "aws:kms",
-                    "s3:x-amz-server-side-encryption-aws-kms-key-id": "arn:aws:kms:us-east-1:535537926792:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
-                },
-                "Bool": {
-                    "aws:SecureTransport": "true"
-                },
-                "IpAddress": {
-                    "aws:SourceIp": [
-                        "192.168.1.0/24",
-                        "10.0.0.10/32"
-                    ]
-                }
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPutWithKmsAndIpAndTlsRestrictions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-server-side-encryption": "aws:kms",
+          "s3:x-amz-server-side-encryption-aws-kms-key-id": "arn:aws:kms:us-east-1:535537926792:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
         },
-        {
-            "Sid": "AllowDeleteWithIpAndTlsRestrictions",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
-            },
-            "Action": "s3:DeleteObject",
-            "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
-            "Condition": {
-                "Bool": {
-                    "aws:SecureTransport": "true"
-                },
-                "IpAddress": {
-                    "aws:SourceIp": [
-                        "192.168.1.0/24",
-                        "10.0.0.10/32"
-                    ]
-                }
-            }
+        "Bool": {
+          "aws:SecureTransport": "true"
+        },
+        "IpAddress": {
+          "aws:SourceIp": [
+            "192.168.1.0/24",
+            "10.0.0.10/32"
+          ]
         }
-    ]
+      }
+    },
+    {
+      "Sid": "AllowDeleteWithIpAndTlsRestrictions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
+      },
+      "Action": "s3:DeleteObject",
+      "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        },
+        "IpAddress": {
+          "aws:SourceIp": [
+            "192.168.1.0/24",
+            "10.0.0.10/32"
+          ]
+        }
+      }
+    }
+  ]
 }
 
----
+
+
 ## 🔎 Policy Breakdown & Security Highlights
 
-| 🔐 Feature                  | ✅ Implementation Detail                                                                 |
-|----------------------------|-------------------------------------------------------------------------------------------|
-| **Principle of Least Privilege** | Only allows `PutObject` and `DeleteObject`; no wildcard permissions                    |
-| **IAM Role Restriction**         | Access granted only to the specified role `FintechDataIngestionRole`                   |
-| **Encryption Enforcement**       | Requires SSE-KMS with a specific KMS Key ID for uploads                                |
-| **Secure Transport (TLS)**       | Ensures all access uses HTTPS (`aws:SecureTransport = true`)                           |
-| **IP Address Whitelisting**      | Access limited to `192.168.1.0/24` and `10.0.0.10/32` for defense-in-depth             |
+| 🔐 **Feature**               | ✅ **Implementation Detail**                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------------|
+| **Principle of Least Privilege** | Only allows `PutObject` and `DeleteObject`; no wildcard permissions                     |
+| **IAM Role Restriction**    | Access granted only to the specified role `FintechDataIngestionRole`                         |
+| **Encryption Enforcement**  | Requires SSE-KMS with a specific KMS Key ID for uploads                                       |
+| **Secure Transport (TLS)**  | Ensures all access uses HTTPS (`aws:SecureTransport = true`)                                  |
+| **IP Address Whitelisting** | Access limited to `192.168.1.0/24` and `10.0.0.10/32` for defense-in-depth                     |
 
-> 🧱 This layered security model aligns with FinTech-grade compliance and minimizes attack surfaces.
+This layered security model aligns with **FinTech-grade compliance** and minimizes attack surfaces.
 
 ---
 
@@ -106,16 +107,17 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
 This experiment demonstrates how Generative AI can accelerate the delivery of highly secure, production-ready cloud configurations. By treating AI like a **cloud security co-pilot**, startups can:
 
 - 🚀 Move faster without compromising on compliance  
-- ⚠️ Avoid common misconfigurations in IAM policies  
+- 🛡️ Avoid common misconfigurations in IAM policies  
 - 📈 Scale secure cloud operations more efficiently  
 
-> ✅ **Human oversight remains essential**, but AI accelerates and augments secure cloud engineering.
+✅ **Human oversight remains essential**, but AI accelerates and augments secure cloud engineering.
 
 ---
 
 ## 🧠 Bonus Tips (for Practitioners)
 
-- 🛠️ Test policies using the [AWS IAM Policy Simulator](https://policysim.aws.amazon.com/)
-- 📜 Enable CloudTrail logging for visibility and auditability
-- 🔁 Iterate with AI to support advanced use cases (e.g., time-bound access, access logging)
-- 🧪 Integrate policy validation into your CI/CD pipelines
+- 🛠️ Test policies using the **AWS IAM Policy Simulator**  
+- 📜 Enable **CloudTrail logging** for visibility and auditability  
+- 🔁 Iterate with AI to support advanced use cases (e.g., time-bound access, access logging)  
+- 🧪 Integrate policy validation into your **CI/CD pipelines**
+
