@@ -1,0 +1,49 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPutWithKmsAndIpAndTlsRestrictions",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:x-amz-server-side-encryption": "aws:kms",
+                    "s3:x-amz-server-side-encryption-aws-kms-key-id": "arn:aws:kms:us-east-1:535537926792:key/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+                },
+                "Bool": {
+                    "aws:SecureTransport": "true"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": [
+                        "192.168.1.0/24",
+                        "10.0.0.10/32"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowDeleteWithIpAndTlsRestrictions",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::535537926792:role/FintechDataIngestionRole"
+            },
+            "Action": "s3:DeleteObject",
+            "Resource": "arn:aws:s3:::fintech-secure-data-ingestion-2025/*",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "true"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": [
+                        "192.168.1.0/24",
+                        "10.0.0.10/32"
+                    ]
+                }
+            }
+        }
+    ]
+}
