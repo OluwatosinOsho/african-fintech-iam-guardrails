@@ -86,33 +86,36 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
     ]
 }
 
-🔎 Policy Breakdown & Security Highlights
-🔐 Feature	✅ Implementation Detail
-Principle of Least Privilege	Only allows PutObject and DeleteObject; no wildcard permissions
-IAM Role Restriction	Access granted only to the specified role FintechDataIngestionRole
-Encryption Enforcement	Requires aws:kms with a specific KMS key ID
-Secure Transport (TLS)	Ensures all access uses HTTPS (aws:SecureTransport = true)
-IP Address Whitelisting	Access limited to 192.168.1.0/24 and 10.0.0.10/32 for defense-in-depth
+---
+## 🔎 Policy Breakdown & Security Highlights
 
-This layered security model aligns with FinTech grade compliance and minimizes attack surfaces.
+| 🔐 Feature                  | ✅ Implementation Detail                                                                 |
+|----------------------------|-------------------------------------------------------------------------------------------|
+| **Principle of Least Privilege** | Only allows `PutObject` and `DeleteObject`; no wildcard permissions                    |
+| **IAM Role Restriction**         | Access granted only to the specified role `FintechDataIngestionRole`                   |
+| **Encryption Enforcement**       | Requires SSE-KMS with a specific KMS Key ID for uploads                                |
+| **Secure Transport (TLS)**       | Ensures all access uses HTTPS (`aws:SecureTransport = true`)                           |
+| **IP Address Whitelisting**      | Access limited to `192.168.1.0/24` and `10.0.0.10/32` for defense-in-depth             |
 
-🚀 Conclusion: Advancing Cloud Security with AI
-This experiment demonstrates how Generative AI can accelerate the delivery of highly secure, production ready cloud configurations. By treating AI like a cloud security co-pilot, startups can:
+> 🧱 This layered security model aligns with FinTech-grade compliance and minimizes attack surfaces.
 
-Move faster without compromising on compliance
+---
 
-Avoid common misconfigurations in IAM policies
+## 🚀 Conclusion: Advancing Cloud Security with AI
 
-Scale secure cloud operations more efficiently
+This experiment demonstrates how Generative AI can accelerate the delivery of highly secure, production-ready cloud configurations. By treating AI like a **cloud security co-pilot**, startups can:
 
-✅ Human oversight remains essential, but AI accelerates and augments secure cloud engineering.
+- 🚀 Move faster without compromising on compliance  
+- ⚠️ Avoid common misconfigurations in IAM policies  
+- 📈 Scale secure cloud operations more efficiently  
 
-🧠 Bonus Tips (for Practitioners)
-🛠️ Test policies using AWS IAM Policy Simulator
+> ✅ **Human oversight remains essential**, but AI accelerates and augments secure cloud engineering.
 
-📜 Add CloudTrail logging for auditability
+---
 
-🔁 Iterate with AI for additional edge cases (e.g., time-bound access, logging actions)
+## 🧠 Bonus Tips (for Practitioners)
 
-🧪 Incorporate into CI/CD pipeline validation
-
+- 🛠️ Test policies using the [AWS IAM Policy Simulator](https://policysim.aws.amazon.com/)
+- 📜 Enable CloudTrail logging for visibility and auditability
+- 🔁 Iterate with AI to support advanced use cases (e.g., time-bound access, access logging)
+- 🧪 Integrate policy validation into your CI/CD pipelines
