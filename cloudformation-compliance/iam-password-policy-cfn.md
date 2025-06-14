@@ -31,28 +31,7 @@ In FinTech, where cloud environments store and process sensitive financial data,
 
 ### ✅ YAML Configuration (Preview)
 
-```yaml
-AWSTemplateFormatVersion: '2010-09-09'
-Description: 'CloudFormation template for IAM Account Password Policy - FinTech Guardrails'
-
-Resources:
-  IAMAccountPasswordPolicy:
-    Type: AWS::IAM::AccountPasswordPolicy
-    Properties:
-      MinimumPasswordLength: 14
-      RequireSymbols: true
-      RequireNumbers: true
-      RequireUppercaseCharacters: true
-      RequireLowercaseCharacters: true
-      AllowUsersToChangePassword: true
-      MaxPasswordAge: 90
-      PasswordReusePrevention: 24
-      HardExpiry: false
-
-Outputs:
-  PasswordPolicyStatus:
-    Description: 'Status of the IAM Account Password Policy'
-    Value: 'IAM Password Policy deployed successfully.'
+[`iam-password-policy.yaml`](./iam-password-policy.yaml) | CloudFormation YAML for enforcing password policy |
 
 ---
 ## 🔎 Key Security Features
