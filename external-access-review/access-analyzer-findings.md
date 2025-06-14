@@ -66,5 +66,4 @@ View a snapshot of the dashboard interface and result summary:
 
 ---
 
-## 📌 Keywords for Discoverability
 
