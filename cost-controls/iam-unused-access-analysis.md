@@ -4,22 +4,22 @@ This document outlines how unused IAM access is monitored and managed in the AWS
 
 ---
 
-## 📌 Purpose
+##  Purpose
 
 Cleaning up unused IAM users, roles, passwords, and access keys isn't just good housekeeping, it's a key part of a strong AWS security posture. This process helps:
 
-- **🔐 Reduce Security Risks**  
+- ** Reduce Security Risks**  
   Old credentials or inactive permissions can quietly become security risks, especially if someone gains unauthorized access to your AWS account.
 
-- **📋 Improve Auditability**  
+- ** Improve Auditability**  
   Keeping IAM clean and minimal makes it easier to stay compliant and respond quickly if something goes wrong.
 
-- **🔎 Enforce Least Privilege**  
+- ** Enforce Least Privilege**  
   Regular reviews ensure only actively used permissions are kept, supporting the principle of least privilege.
 
 ---
 
-## 🧪 Methodology
+##  Methodology
 
 We used **AWS IAM Access Analyzer's "Unused Access"** feature to identify any IAM resources that are not being used. This tool helps detect:
 
@@ -30,7 +30,7 @@ This is a native and cost-effective way to tighten **AWS IAM security** and avoi
 
 ---
 
-## ✅ Findings
+##  Findings
 
 > **Analysis Result:** `0 unused access findings`
 
@@ -38,36 +38,36 @@ This result is expected for a new AWS account. Most IAM users and roles have bee
 
 ---
 
-## 🖼️ Screenshot
+##  Screenshot
 
 You can view a snapshot of the IAM Access Analyzer result here:  
-📁 [`iam-unused-access-analysis.png`](./screenshots/iam-unused-access-analysis.png)
+ [`iam-unused-access-analysis.png`](./screenshots/iam-unused-access-analysis.png)
 
 ---
 
-## 🔄 What Happens if We Find Unused Access?
+##  What Happens if We Find Unused Access?
 
 In a real production environment, unused IAM access would be addressed with a structured remediation plan:
 
-1. **📌 Investigate**  
+1. ** Investigate**  
    Confirm whether the IAM entity is obsolete or still needed for upcoming work.
 
-2. **📣 Notify**  
+2. ** Notify**  
    Alert the owner or responsible team about the inactive access.
 
-3. **🚫 Revoke or Remove Access**  
+3. ** Revoke or Remove Access**  
    - Delete unused IAM users and roles.  
    - Rotate (replace with a new one) or disable stale access keys.  
    - Reset unused passwords.
 
-4. **📦 Archive if Needed**  
+4. ** Archive if Needed**  
    If the IAM role is tied to business-critical functions but unused, consider moving it into an “inactive” group with no permissions instead of deleting it right away.
 
 This approach ensures you’re not just reacting to risks but actively preventing them.
 
 ---
 
-## 🧭 Final Thoughts
+##  Final Thoughts
 
 Running **IAM unused access analysis** on AWS should be part of any cloud security routine. It reinforces **least privilege access**, reduces unnecessary exposure, and simplifies audits.
 

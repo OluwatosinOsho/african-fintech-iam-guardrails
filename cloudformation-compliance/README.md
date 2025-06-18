@@ -1,10 +1,10 @@
-# 🛡️ Infrastructure as Code (IaC) for IAM Compliance
+#  Infrastructure as Code (IaC) for IAM Compliance
 
 This directory demonstrates how to leverage **AWS CloudFormation** to automate and enforce IAM security controls as **Infrastructure as Code (IaC)**. For **FinTech organizations**, using IaC is important, it ensures **secure, auditable, and repeatable** deployments across all environments, minimizing human error and improving compliance with industry standards.
 
 ---
 
-## 🎯 Why IAM Compliance with IaC Matters
+##  Why IAM Compliance with IaC Matters
 
 ✅ **Automated Deployments**  
 Provision IAM policies and controls consistently across development, staging, and production.
@@ -23,11 +23,11 @@ Demonstrate compliance (e.g., PCI DSS, SOC 2, NDPR) through automated policies.
 
 ---
 
-## 🔐 Implemented Control: IAM Password Policy (CloudFormation)
+##  Implemented Control: IAM Password Policy (CloudFormation)
 
 This section includes a **CloudFormation template** that enforces a strong account wide password policy for IAM users.
 
-### 📜 `iam-password-policy.yaml`
+###  `iam-password-policy.yaml`
 
 **What it does:**
 
@@ -43,7 +43,7 @@ This section includes a **CloudFormation template** that enforces a strong accou
 - Enhances **protection against unauthorized login attempts**
 - Helps meet compliance requiremets like **PCI DSS** and **ISO 27001**
 
-> 🔁 **Deployed via CI/CD pipelines**, this template ensures new IAM users inherit strong, standardized security policies.
+>  **Deployed via CI/CD pipelines**, this template ensures new IAM users inherit strong, standardized security policies.
 
 ---
 
@@ -56,7 +56,7 @@ This section includes a **CloudFormation template** that enforces a strong accou
 
 ---
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - **Least Privilege Role Templates:** Define secure defaults for IAM roles and service permissions  
 - **MFA Enforcement:** Enforce console MFA access through automated controls  
@@ -65,7 +65,7 @@ This section includes a **CloudFormation template** that enforces a strong accou
 
 ---
 
-## ✅ Next Steps (Production Grade Deployment)
+##  Next Steps (Production Grade Deployment)
 
 In a real world setup, this template would be deployed through **AWS CloudFormation** integrated with a **CI/CD pipeline**, ensuring:
 

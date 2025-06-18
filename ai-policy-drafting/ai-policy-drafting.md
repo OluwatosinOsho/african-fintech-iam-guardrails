@@ -1,10 +1,10 @@
-# 🔐 AI-Powered Policy Drafting for Secure Data Ingestion
+#   AI-Powered Policy Drafting for Secure Data Ingestion
 
 This document showcases the application of **Generative AI (Google Gemini)** in drafting a complex AWS S3 bucket policy. For a FinTech startup, leveraging AI for initial policy generation significantly accelerates development, minimizes human error, and ensures compliance with stringent security and compliance requirements.
 
 ---
 
-## 🎯 Use Case: Secure Data Ingestion to Amazon S3
+##  Use Case: Secure Data Ingestion to Amazon S3
 
 FinTech applications frequently handle highly sensitive customer and transaction data. Ingesting this data into Amazon S3 must follow strict controls, including:
 
@@ -16,7 +16,7 @@ Manually crafting such policies is tedious, time consuming, and prone to human e
 
 ---
 
-## 🤖 AI Prompt and Requirements
+##  AI Prompt and Requirements
 
 The following detailed prompt was provided to **Google Gemini**, acting as an “AWS IAM policy expert,” to generate the bucket policy:
 
@@ -33,7 +33,7 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
 
 ---
 
-## 📄 AI-Generated Bucket Policy (JSON)
+##  AI-Generated Bucket Policy (JSON)
 
 ```json
 {
@@ -88,9 +88,9 @@ The following detailed prompt was provided to **Google Gemini**, acting as an �
 
 
 
-## 🔎 Policy Breakdown & Security Highlights
+##  Policy Breakdown & Security Highlights
 
-| 🔐 **Feature**               | ✅ **Implementation Detail**                                                                 |
+|  **Feature**               |  **Implementation Detail**                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------------------------|
 | **Principle of Least Privilege** | Only allows `PutObject` and `DeleteObject`; no wildcard permissions                     |
 | **IAM Role Restriction**    | Access granted only to the specified role `FintechDataIngestionRole`                         |
@@ -102,22 +102,22 @@ This layered security model aligns with **FinTech-grade compliance** and minimiz
 
 ---
 
-## 🚀 Conclusion: Advancing Cloud Security with AI
+##  Conclusion: Advancing Cloud Security with AI
 
 This experiment demonstrates how Generative AI can accelerate the delivery of highly secure, production-ready cloud configurations. By treating AI like a **cloud security co-pilot**, startups can:
 
-- 🚀 Move faster without compromising on compliance  
-- 🛡️ Avoid common misconfigurations in IAM policies  
-- 📈 Scale secure cloud operations more efficiently  
+-  Move faster without compromising on compliance  
+-  Avoid common misconfigurations in IAM policies  
+-  Scale secure cloud operations more efficiently  
 
 ✅ **Human oversight remains essential**, but AI accelerates and augments secure cloud engineering.
 
 ---
 
-## 🧠 Bonus Tips (for Practitioners)
+##  Bonus Tips (for Practitioners)
 
-- 🛠️ Test policies using the **AWS IAM Policy Simulator**  
-- 📜 Enable **CloudTrail logging** for visibility and auditability  
-- 🔁 Iterate with AI to support advanced use cases (e.g., time-bound access, access logging)  
-- 🧪 Integrate policy validation into your **CI/CD pipelines**
+-  ✅ Test policies using the **AWS IAM Policy Simulator**  
+-  ✅ Enable **CloudTrail logging** for visibility and auditability  
+-  ✅ Iterate with AI to support advanced use cases (e.g., time-bound access, access logging)  
+-  ✅ Integrate policy validation into your **CI/CD pipelines**
 

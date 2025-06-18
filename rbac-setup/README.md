@@ -6,7 +6,7 @@ RBAC helps enforce cloud security by assigning permissions based on responsibili
 
 ---
 
-## 🔐 IAM Roles Defined
+##  IAM Roles Defined
 
 ### 1. FintechDevRole
 
@@ -26,13 +26,13 @@ RBAC helps enforce cloud security by assigning permissions based on responsibili
 
 ---
 
-## 🔒 Principle of Least Privilege in Practice
+##  Principle of Least Privilege in Practice
 
 Both roles are built with least privilege as the foundation. Instead of assigning permissions to individual users, access is granted via tightly scoped roles. This minimizes your attack surface and makes permission management more transparent and scalable.
 
 ---
 
-## 📁 Content
+##  Content
 
 - `fintech-dev-role.json`: Policy definition for developer role.
 - `fintech-auditor-role-security-audit.json`: Security audit permissions.

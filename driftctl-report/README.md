@@ -20,7 +20,7 @@ In a fintech startup, especially one operating in a mobile first, regulated envi
 
 ## Implemented Rule: IAM Root Access Key Check
 
-### ✅ AWS Config Rule: `iam-root-access-key-check`
+###  AWS Config Rule: `iam-root-access-key-check`
 
 * **Purpose:** Checks for **active root account access keys**, which should never exist under secure IAM operations.
 * **Type:** AWS Managed Rule  
@@ -34,8 +34,8 @@ In a fintech startup, especially one operating in a mobile first, regulated envi
 * Flags drift without manual oversight and keeps us aligned with **cloud security best practices**.  
 * Provides **verifiable proof of IAM maturity** to stakeholders in regulated environments.
 
-📄 See the full breakdown: [`iam-config-rule.md`](./iam-config-rule.md)  
-🖼️ Screenshot available here: [`config-iam-root-access-key-check.png`](./screenshots/config-iam-root-access-key-check.png)
+ See the full breakdown: [`iam-config-rule.md`](./iam-config-rule.md)  
+ Screenshot available here: [`config-iam-root-access-key-check.png`](./screenshots/config-iam-root-access-key-check.png)
 
 ---
 
@@ -43,9 +43,9 @@ In a fintech startup, especially one operating in a mobile first, regulated envi
 
 We're extending our drift detection baseline to cover broader IAM hygiene with:
 
-* 📌 **Automated Remediation**: Trigger Lambda functions to fix drift (e.g., disable root keys, enforce MFA).
-* 🔔 **SNS Alerts**: Notify teams when violations are detected, ideal for Slack/SMS/email integrations.
-* 🧩 **Additional Config Rules**: Expand to detect:
+*  **Automated Remediation**: Trigger Lambda functions to fix drift (e.g., disable root keys, enforce MFA).
+*  **SNS Alerts**: Notify teams when violations are detected, ideal for Slack/SMS/email integrations.
+*  **Additional Config Rules**: Expand to detect:
 
   * IAM users without MFA  
   * Weak password policies  

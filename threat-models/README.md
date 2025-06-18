@@ -1,4 +1,4 @@
-# 🛡️ Threat Models & Mitigation Strategies for African Fintech Environments
+#  Threat Models & Mitigation Strategies for African Fintech Environments
 
 
 
@@ -10,11 +10,11 @@ This directory contains threat modeling documentation and security configuration
 
 
 
-## 🔍 Key Threats & Countermeasures
+##  Key Threats & Countermeasures
 
 
 
-### 1. 📱 SIM Swap Attacks
+### 1.  SIM Swap Attacks
 
 
 
@@ -42,7 +42,7 @@ This directory contains threat modeling documentation and security configuration
 
 
 
-### 2. 🎣 Phishing & Malicious IP Traffic
+### 2.  Phishing & Malicious IP Traffic
 
 
 
@@ -69,7 +69,7 @@ This directory contains threat modeling documentation and security configuration
 
 
 
-## 🏰 Security Philosophy: Defense in Depth
+##  Security Philosophy: Defense in Depth
 
 
 
@@ -101,7 +101,7 @@ Combining identity hardening with network level restrictions ensures a more resi
 
 
 
-## 📁 File Structure
+##  File Structure
 
 
 
@@ -125,7 +125,7 @@ Combining identity hardening with network level restrictions ensures a more resi
 
 
 
-## 📌 Summary
+##  Summary
 
 
 

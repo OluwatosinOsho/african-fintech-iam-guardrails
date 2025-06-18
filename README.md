@@ -1,4 +1,4 @@
-## 🔐 Implemented IAM Guardrails & Cloud Security Controls
+##  Implemented IAM Guardrails & Cloud Security Controls
 
 This project meticulously designs and documents a comprehensive suite of IAM and cloud security guardrails, categorized by key security domains:
 
@@ -16,7 +16,7 @@ This project meticulously designs and documents a comprehensive suite of IAM and
 
 ---
 
-### 📁 Project Structure & Detailed Documentation
+###  Project Structure & Detailed Documentation
 
 Each of the above sections is documented in its dedicated directory:
 

@@ -14,7 +14,7 @@ By combining AI's language understanding with cloud-native security concepts, th
 
 
 
-## 🔐 Why AI for IAM Policy Drafting?
+##  Why AI for IAM Policy Drafting?
 
 
 
@@ -36,7 +36,7 @@ Manually writing IAM and bucket policies can be error prone, especially under ti
 
 
 
-## 🧪 Implemented Scenario: Secure S3 Data Ingestion Policy
+##  Implemented Scenario: Secure S3 Data Ingestion Policy
 
 
 
@@ -60,7 +60,7 @@ This use case showcases an AI-generated S3 bucket policy designed to enforce rig
 
 
 
-## 📁 Directory Structure
+##  Directory Structure
 
 
 
@@ -79,7 +79,7 @@ The finalized IAM policy JSON, ready to apply to an S3 bucket for secure uploads
 
 
 
-## ✅ Security Audit Checklist
+##  Security Audit Checklist
 
 
 
@@ -103,7 +103,7 @@ The finalized IAM policy JSON, ready to apply to an S3 bucket for secure uploads
 
 
 
-## 🔭 Future Potential of AI in IAM Management
+##  Future Potential of AI in IAM Management
 
 
 
@@ -123,21 +123,7 @@ This proof of concept can be extended into broader security automation efforts:
 
 ---
 
-
-
-## 🌐 Tags 
-
-
-
-`AWS`, `S3`, `IAM`, `Google Gemini`, `Generative AI`, `S3 Bucket Policy`, `KMS Encryption`, `Secure Data Ingestion`, `FinTech Cloud Security`, `IP Whitelisting`, `AI DevSecOps`, `Policy-as-Code`, `Cloud Security Automation`, `Least Privilege`, `Server-Side Encryption`
-
-
-
----
-
-
-
-## 💡 Summary
+##  Summary
 
 
 

@@ -1,10 +1,10 @@
-# 🧾 AWS Cost Budget Configuration for "African Fintech IAM Guardrails"
+#  AWS Cost Budget Configuration for "African Fintech IAM Guardrails"
 
 This document outlines how AWS Budgets are configured for the **African Fintech IAM Guardrails** project, a key initiative to stay within AWS Free Tier limits, prevent surprise charges, and maintain financial discipline for a resource-conscious startup.
 
 ---
 
-## 💡 Why Set Up a Cost Budget?
+##  Why Set Up a Cost Budget?
 
 Tracking AWS spend in real time helps early-stage teams:
 
@@ -15,7 +15,7 @@ Tracking AWS spend in real time helps early-stage teams:
 
 ---
 
-## 📊 Budget Details
+##  Budget Details
 
 - **Name:** `FintechMonthlyBudget80USD`  
 - **Type:** Cost Budget  
@@ -29,7 +29,7 @@ This budget reflects the monthly Free Tier buffer and extra allowance for small-
 
 ---
 
-## 🚨 Alert Thresholds
+##  Alert Thresholds
 
 To ensure proactive cost management, we've set up the following alert triggers:
 
@@ -43,7 +43,7 @@ These multi-tier alerts give us time to investigate and act before real cost imp
 
 ---
 
-## 📧 Notification Settings
+##  Notification Settings
 
 - **Email Recipients:**  
   - `team@fintechstartup.io` (primary recipient)
@@ -54,7 +54,7 @@ These multi-tier alerts give us time to investigate and act before real cost imp
 
 ---
 
-## ⚙️ Future Automation Plans
+##  Future Automation Plans
 
 We're working toward integrating **AWS Budgets Actions** that can:
 
@@ -66,14 +66,14 @@ This will move us from **cost awareness** to **automated cost control**, crucial
 
 ---
 
-## 🖼️ Budget Screenshot
+##  Budget Screenshot
 
 Visual reference for the configured budget is available here:  
 📷 [`budget-alert.png`](./screenshots/budget-alert.png)
 
 ---
 
-## 🧩 Summary
+##  Summary
 
 Setting this monthly AWS budget is a foundational part of our cloud governance strategy. It ensures the **"African Fintech IAM Guardrails"** project stays cost-effective, with early alerts and a clear ceiling on spend.  
 
